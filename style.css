@@ -1,0 +1,111 @@
+*{
+   margin: 0;
+   padding: 0; 
+}
+body{
+line-height: 1.5;
+  margin: 0 auto;
+  font-family: Helvetica, sans-serif;
+  background-image: linear-gradient(to right, #02AABD , #00CDAC);
+  color: ghostwhite;
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+
+/* ************************************************ */
+section{
+    max-width: 40rem;
+    margin: auto;
+    margin-top: 10rem;
+}
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #3E363F;
+    animation-name: ani;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+}
+@keyframes ani {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.content-container{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 20px;
+    margin-block: 25px;
+    box-shadow: 0 0 30px #00CDAC;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quote{
+    margin-inline: 20px;
+}
+#content, #author{
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+#content{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+#author::before, #author::after{
+    content: " ------ ";
+}
+#author{
+    margin-block: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+button{
+    background-color:#02AABD;
+    color: whitesmoke;
+    text-transform: uppercase;
+    padding: 10px 50px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    outline: 1px solid #02AABD ;
+}
+button:hover{
+    background-color: whitesmoke;
+    color: #02AABD;
+    outline: 3px solid #02AABD;
+    transition-duration: .3s;
+}
+.other{
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    color: #3E363F;
+}
+#link{
+    color: #3E363F;
+    text-decoration: none;
+}
+#link:hover{
+    color: #675968;
+}

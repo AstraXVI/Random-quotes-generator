@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>Random Quotes Generator</h1>
+        <div class="content-container">
+            <div class="main-content">
+                <div class="quote">
+                    <h4 id="content"></h4>
+                    <p id="author"></p>
+                </div>
+                <button onclick="window.location.reload();">next</button>
+            </div>
+        </div>
+        <div class="other">
+            <span>Tags: <span id="tags"></span></span>
+            <a id="link" href="#">Visit their website for more quotes</a>
+        </div>
+    </section>
+</body>
+
+<script>
+    let content = document.querySelector('#content');
+    let link = document.querySelector('#link');
+    let author = document.querySelector('#author');
+    let tags = document.querySelector('#tags');
+
+    const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '4b175469c7msh0a15bf49d63612ap1235fajsneac7ec54de48',
+		'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
+	}
+};
+
+fetch('https://quotes15.p.rapidapi.com/quotes/random/', options)
+	.then(response => response.json())
+	.then(response => {
+        console.log(response)
+        content.textContent = response.content;
+        author.textContent = response.originator.name;
+        tags.textContent = response.tags.slice(0, 5);
+        link.href = response.url;
+
+    });
+
+    // .catch(err => console.error(err));
+</script>
+</html>
